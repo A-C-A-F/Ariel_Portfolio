@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics on Home</title>
+    <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/</link>
+    <description>Recent content in Analytics on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jan 2022 12:00:00 -0500</lastBuildDate><atom:link href="https://a-c-a-f.github.io/Ariel_Portfolio/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Analysis with Pandas Part 1</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-1/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-1/</guid>
+      <description>TASK 1: DEFINE A PANDAS SERIES  Pandas is a data manipulation and analysis tool that is built on Numpy. Pandas uses a data structure known as DataFrame (think of it as Microsoft excel in Python). DataFrames empower programmers to store and manipulate data in a tabular fashion (rows and columns). Series Vs. DataFrame? Series is considered a single column of a DataFrame.  input:
+import pandas as pd Let&amp;rsquo;s define a Python list that contains 5 crypto currencies.</description>
+    </item>
+    
+    <item>
+      <title>Data Analysis with Pandas Part 5</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-2/</link>
+      <pubDate>Tue, 26 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-2/</guid>
+      <description>Pandas is a super powerful, fast, flexible and easy to use open source data analysis tool.
+This dataset is actually quite famous and it&amp;rsquo;s primarily used for training machine learning models and essentially training of machine learning models, especially natural language processing models is beyond the scope of this project. What we have here is different reviews from different customers on amazon Echo product and different ratings. The customers gave the product ratings range between one and five.</description>
+    </item>
+    
+    <item>
+      <title>Python for Data Visualization</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-3/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-3/</guid>
+      <description>In this project, we will understand the fundamentals of data visualization with python and we will leverage the power of two important python libraries known as matplotlib and seaborn.
+Data Source: https://www.kaggle.com/datasets/arielfelices/python-data-vizz
+Below is the summary of the tasks performed in this project:  Task 1: Introduction Task 2: Plot Basic Line Plot Task 3: Plot Scatter Plot Task 4: Plot Pie Chart Task 5: Plot Histogram Task 6: Plot Multiple Plots Task 7: Plot Subplots Task 8: Plot 3D Plots Task 9: Seaborn Scatterplot and Countplot Task 10: Seaborn Pairplot, Displot, and Heatmaps/Correlation  You can find the source data and my codes in any of my Project&amp;rsquo;s Repositories below:</description>
+    </item>
+    
+    <item>
+      <title>EDA on Supermarket-sales dataset</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-4/</link>
+      <pubDate>Sat, 07 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-4/</guid>
+      <description>About the Dataset Data Source: https://www.kaggle.com/aungpyaeap/supermarket-sales
+Context
+The growth of supermarkets in most populated cities are increasing and market competitions are also high. The dataset is one of the historical sales of supermarket company which has recorded in 3 different branches for 3 months data.
+Data Dictionary
+ Invoice id: Computer generated sales slip invoice identification number Branch: Branch of supercenter (3 branches are available identified by A, B and C).</description>
+    </item>
+    
+    <item>
+      <title>Exploratory Data Analysis vs. Confirmatory Data Analysis</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-5/</link>
+      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-5/</guid>
+      <description>The data set that we&amp;rsquo;re going to work with is a dataset containing information about product sales in the US.
+Data Source: https://www.kaggle.com/datasets/arielfelices/acaf-dataset-collection?select=Product+Sales+in+US.csv
+Below are the key objectives of this project:  Understand and apply Exploratory Data Analysis. Build different Data visualizations. Apply different exploration techniques based on the data at hand. Define and apply the concept of Confirmatory Data Analysis.  Below is the summary of the tasks performed in this project:  Task 1: Understanding EDA; Load Libraries; Load Data.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Analysis using Python Numpy</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-6/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-6/</guid>
+      <description>The data set that we&amp;rsquo;re going to work with is a dataset from Kaggle, Student Performance Dataset.
+Data Source: https://www.kaggle.com/datasets/barkhaverma/student-performance-dataset
+Below are the key objectives of this project:  Create an Adjacency List using a Python Dictionary where each entry is a List. Add the Python function to find the shortest paths to each vertex from the source vertex. Add the function to populate the adjacency list of edges from a file using a Python Dictionary container.</description>
+    </item>
+    
+    <item>
+      <title>Lambda Functions in Python</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-7/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-7/</guid>
+      <description>In this project we are going to learn about lambda expressions and it&amp;rsquo;s application in python. We are going to start with what is Lambda expression and how we can define it, comparing lambda functions with regular functions in python and at the end we will learn how to use lambda functions for data manipulation and exploration in pandas.
+Below is the summary of the tasks performed in this project:  Task 1: What is Lambda expression?</description>
+    </item>
+    
+    <item>
+      <title>Correlations and T-tests</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-8/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-8/</guid>
+      <description>This project is for people who are interested in statistics, particularly carrying our statistical analysis in Python. In this project will be taking data from the World Bank. They have one data set on science and technology, and that&amp;rsquo;s what we&amp;rsquo;ll be looking at throughout this project.
+Data Source: https://www.kaggle.com/datasets/arielfelices/acaf-dataset-collection
+Below are the key objectives of this project:  Clean the data and remove null values to prepare it for statistical analysis.</description>
+    </item>
+    
+    <item>
+      <title>Data Analysis Using Seaborn and Python </title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-9/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-9/</guid>
+      <description>In this project, we will apply various graphical techniques using Seaborn to analyze worldwide box office revenue.
+Below are the key objectives of this project:  Produce data visualizations with Seaborn. Apply graphical techniques used in exploratory data analysis (EDA).  Below is the summary of the tasks performed in this project:  Task 1: Data Loading and Exploration Task 2: Visualizing the Target Distribution Task 3: Comparing Film Revenue to Budget Task 4: Do Official Homepages Impact Revenue?</description>
+    </item>
+    
+    <item>
+      <title>Sentimental Analysis Using Python</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-10/</link>
+      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-10/</guid>
+      <description>In this project, we are going to use a dataset consisting of the data related to tweets from 24th of July 2020 to 30th August 2020 with Covid19 hashtags. We&amp;rsquo;re going to use python to apply sentiment analysis on the tweets to see people reactions to the pandemic during the mentioned period.
+Data Source: https://www.kaggle.com/datasets/gpreda/covid19-tweets
+We are going to labelize each of the tweets with positive, negative and neutral labels.</description>
+    </item>
+    
+    <item>
+      <title>Statistics in Python (ANOVA)</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-11/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-11/</guid>
+      <description>This project is for people who are interested in statistics, particularly carrying our statistical analysis in Python. In this project we will be focusing on the data set from the World Bank, which is on education, specifically around the percentage of females which are unemployed in different country groups. We will use python to create plots so that we can visualize our results. We will also be performing ANOVA on different groups and using box plots to visualize the results of that analysis.</description>
+    </item>
+    
+    <item>
+      <title>Hierarchical Data Analysis</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-12/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-12/</guid>
+      <description>The data set that we&amp;rsquo;re going to work with contains some hierarchical data about different products sold in different stores in different cities in Mexico.
+Data Source: https://www.kaggle.com/datasets/arielfelices/acaf-dataset-collection?select=Miexico_hierarchical_dataset.csv
+Below are the key objectives of this project:  Learn how to analyze Hierarchical Data. Learn how to analyze data using different visualization techniques. Learn the of concept of Data Granularity. Learn how to use different levels of granularity to answer some analytical question.</description>
+    </item>
+    
+    <item>
+      <title>Principal Component Analysis</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-13/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-13/</guid>
+      <description>In this project, we are going to implement PCA from scratch without using any popular ML libraries like scikit learn. The data that we used is a popula ML datasets that lives on UCI repository.
+Data Source: https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+Below are the key objectives of this project:  Implement Principal Component Analysis (PCA) from scratch with NumPy and Python Conduct basic exploratory data analysis (EDA) Create simple data visualizations with Seaborn and Matplotlib  Below is the summary of the tasks performed in this project:  Task 1: Introduction to the data set and the problem overview.</description>
+    </item>
+    
+    <item>
+      <title>EDA on Insurance Dataset</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-14/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-14/</guid>
+      <description>In this project, we will learn practically how to create and apply graphical techniques in Exploratory Data Analysis (EDA). The dataset that we will be working on is about insurance record containing some features like age, gender and BMI and the region, and if the person is a smoker on non smoker and charges.
+Data Source: https://www.kaggle.com/datasets/joudalnsour/data-visualizatiion
+Below are the key objectives of this project:  Understanding the concept of Exploratory Data Analysis.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Data Vizz using Plotly</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-17/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-17/</guid>
+      <description>In this project we will explore plotly express to visually statistical plots such as box plots, histograms, heat maps, density maps, contour plots and violent plots.
+Some important background about plotly package.
+ The plotly Python package empowers anyone to create, manipulate and render graphical figures. The figures are represented by data structures referred to as figures. The rendering process uses the Plotly.js JavaScript library under the hood but you never need to use Java directly.</description>
+    </item>
+    
+    <item>
+      <title>Calculating Descriptive Statistics in R</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-1/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-1/</guid>
+      <description>Project Objectives:  Calculate basic descriptive statistics for qualitative variables Calculate basic descriptive statistics for quantitative variables Check the distribution of quantitative variables  Data Source can be found in the links below:
+ mpg.csv mpg data dictionary msleep.csv msleep data dictionary  Project Structure  Task 1: Getting Started Task 2: Import Packages &amp;amp; the dataset Task 3: Frequency of categorical variables Task 4: Univariate statistics for univariate variables - Part I Task 5: Univariate statistics for univariate variables - Part II Task 6: Distribution of Quantitative Variables Task 7: Bivariate statistics for variables  The Book Code can be found at the document &amp;ldquo;Calculating-Basic-Descriptive-in-R.</description>
+    </item>
+    
+    <item>
+      <title>Exploratory Data Analysis (EDA) in R</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-2/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-2/</guid>
+      <description>Project Objectives:  Perform EDA by plotting qualitative variables Perform EDA by plotting quantitative variables  Data Source can be found in the links below:
+ mpg.csv mpg data dictionary msleep.csv msleep data dictionary  Project Structure  Task 1: Getting Started Task 2: Import &amp;amp; Explore Data sets Task 3: Plotting a categorical variable Task 4: Plotting a numeric variable Task 5: Plotting a Numerical and Categorical Variable Task 6: Plotting two variables Task 7: Plotting three variables  The Markdown is titled EDA in R.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression Model in R</title>
+      <link>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-3/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://a-c-a-f.github.io/Ariel_Portfolio/collections/r-3/</guid>
+      <description>This project is for people who are interested in building a linear regression model on real world data set and analyze the model&amp;rsquo;s performance in R.
+Data Source: https://www.kaggle.com/datasets/hashroot97/carpriceprediction
+Below are the key objectives of this project:  How to load and clean a real world data set. How to build a linear regression model and create various plots to analyze the model&amp;rsquo;s performance. How to predict future values using this model.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Data Analysis with Pandas Part 1 | Home</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Python">
+    <meta name="generator" content="Hugo 0.96.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://a-c-a-f.github.io/Ariel_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Data Analysis with Pandas Part 1" />
+<meta property="og:description" content="Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-1/" /><meta property="article:section" content="Collections" />
+<meta property="article:published_time" content="2022-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-01T00:00:00+00:00" /><meta property="og:site_name" content="Home" />
+
+<meta itemprop="name" content="Data Analysis with Pandas Part 1">
+<meta itemprop="description" content="Python"><meta itemprop="datePublished" content="2022-02-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2099">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Analysis with Pandas Part 1"/>
+<meta name="twitter:description" content="Python"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://a-c-a-f.github.io/Ariel_Portfolio/images/pandas2.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://a-c-a-f.github.io/Ariel_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Home
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/collections/" title="Analytics page">
+              Analytics
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/sql/" title="SQL page">
+              SQL
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/dashboard-vizz/" title="Vizz page">
+              Vizz
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/about/" title="| About Me | page">
+              | About Me |
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/certifications/" title="| Accomplishments | page">
+              | Accomplishments |
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://a-c-a-f.github.io/Ariel_Portfolio/downloads/" title="| Resources | page">
+              | Resources |
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/ariel-christian-felices/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://twitter.com/ariel_felices" target="_blank" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/A-C-A-F" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.kaggle.com/arielfelices" target="_blank" class="kaggle ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="kaggle link" rel="noopener" aria-label="follow on kaggle——Opens in a new window">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/></svg></span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Data Analysis with Pandas Part 1</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Python
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ANALYTICS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-1/&amp;title=Data%20Analysis%20with%20Pandas%20Part%201" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+        
+      </a>
+    
+      
+      <a href="https://twitter.com/share?url=https://a-c-a-f.github.io/Ariel_Portfolio/collections/python-1/&amp;text=Data%20Analysis%20with%20Pandas%20Part%201" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Data Analysis with Pandas Part 1</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-02-01T00:00:00Z">February 1, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="task-1-define-a-pandas-series">TASK 1: DEFINE A PANDAS SERIES</h3>
+<ul>
+<li>Pandas is a data manipulation and analysis tool that is built on Numpy.</li>
+<li>Pandas uses a data structure known as DataFrame (think of it as Microsoft excel in Python).</li>
+<li>DataFrames empower programmers to store and manipulate data in a tabular fashion (rows and columns).</li>
+<li>Series Vs. DataFrame? Series is considered a single column of a DataFrame.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span></code></pre></div><p>Let&rsquo;s define a Python list that contains 5 crypto currencies.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;BTC&#39;</span>, <span style="color:#e6db74">&#39;XRP&#39;</span>, <span style="color:#e6db74">&#39;LTC&#39;</span>, <span style="color:#e6db74">&#39;ADA&#39;</span>, <span style="color:#e6db74">&#39;ETH&#39;</span>]
+</span></span><span style="display:flex;"><span>crypto_list
+</span></span></code></pre></div><p>output:</p>
+<pre><code>['BTC', 'XRP', 'LTC', 'ADA', 'ETH']
+</code></pre>
+<p>Let&rsquo;s confirm the Datatype.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(crypto_list)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>list
+</code></pre>
+<ul>
+<li>Let&rsquo;s create a one dimensional Pandas &ldquo;series&rdquo;</li>
+<li>Let&rsquo;s use Pandas Constructor Method to create a series from a Python list.</li>
+<li>Note that series is formed of data and associated index (numeric index has been automatically generated).</li>
+<li>Check Pandas Documentation for More information: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series</a>.</li>
+<li>Object datatype is used for text data (String).</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> crypto_list)
+</span></span><span style="display:flex;"><span>crypto_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0    BTC
+1    XRP
+2    LTC
+3    ADA
+4    ETH
+dtype: object
+</code></pre>
+<p>Let&rsquo;s confirm the Pandas Series Datatype.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(crypto_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.series.Series
+</code></pre>
+<ul>
+<li>Let&rsquo;s define another Pandas Series that contains numeric values (crypto prices) instead of text data.</li>
+<li>Note that we have int64 datatype which means it&rsquo;s integer stored in 64 bits in memory.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">50</span>])
+</span></span><span style="display:flex;"><span>crypto_prices_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0    2000
+1     500
+2    2000
+3      20
+4      50
+dtype: int64
+</code></pre>
+<p><strong>MINI CHALLENGE #1:</strong></p>
+<ul>
+<li><strong>Define a Pandas Series named &ldquo;my_series&rdquo; that contains your top 3 favourite stocks. Confirm the datatype of &ldquo;my_series&rdquo;</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;GOOGL&#39;</span>, <span style="color:#e6db74">&#39;MSFT&#39;</span>, <span style="color:#e6db74">&#39;AMZN&#39;</span>])
+</span></span><span style="display:flex;"><span>my_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0    GOOGL
+1     MSFT
+2     AMZN
+dtype: object
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(my_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.series.Series
+</code></pre>
+<h3 id="task-2-define-a-pandas-series-with-custom-index">TASK 2. DEFINE A PANDAS SERIES WITH CUSTOM INDEX</h3>
+<p>Let&rsquo;s define a Python list that contains 5 Crypto currencies</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;BTC&#39;</span>, <span style="color:#e6db74">&#39;XRP&#39;</span>, <span style="color:#e6db74">&#39;LTC&#39;</span>, <span style="color:#e6db74">&#39;ADC&#39;</span>, <span style="color:#e6db74">&#39;ETH&#39;</span>]
+</span></span><span style="display:flex;"><span>crypto_list
+</span></span></code></pre></div><p>output:</p>
+<pre><code>['BTC', 'XRP', 'LTC', 'ADC', 'ETH']
+</code></pre>
+<p>Let&rsquo;s define a python list as shown below. This python list will be used for the Series index:</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_labels <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;crypto#1&#39;</span>, <span style="color:#e6db74">&#39;crypto#2&#39;</span>, <span style="color:#e6db74">&#39;crypto#3&#39;</span>, <span style="color:#e6db74">&#39;crypto#4&#39;</span>, <span style="color:#e6db74">&#39;crypto#5&#39;</span>]
+</span></span><span style="display:flex;"><span>crypto_labels
+</span></span></code></pre></div><p>output:</p>
+<pre><code>['crypto#1', 'crypto#2', 'crypto#3', 'crypto#4', 'crypto#5']
+</code></pre>
+<ul>
+<li>Let&rsquo;s create a one dimensional Pandas &ldquo;series&rdquo;.</li>
+<li>Let&rsquo;s use Pandas Constructor Method to create a series from a Python list.</li>
+<li>Note that this series is formed of data and associated labels.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>crypto_list, index <span style="color:#f92672">=</span> crypto_labels)
+</span></span></code></pre></div><p>Let&rsquo;s view the series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>crypto#1    BTC
+crypto#2    XRP
+crypto#3    LTC
+crypto#4    ADC
+crypto#5    ETH
+dtype: object
+</code></pre>
+<p>Let&rsquo;s obtain the datatype</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(crypto_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.series.Series
+</code></pre>
+<p><strong>MINI CHALLENGE #2:</strong></p>
+<ul>
+<li><strong>Define a Pandas Series named &ldquo;my_series&rdquo; that contains your top 3 favourite stocks. Instead of using default numeric indexes (similar to mini challenge #1), use the following indexes &ldquo;stock #1&rdquo;, &ldquo;stock #2&rdquo;, and &ldquo;stock #3&rdquo;</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GOOLGE&#39;</span>, <span style="color:#e6db74">&#39;MICROSOFT&#39;</span>, <span style="color:#e6db74">&#39;APPLE&#39;</span>], index <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;stock#1&#39;</span>, <span style="color:#e6db74">&#39;stock#2&#39;</span>, <span style="color:#e6db74">&#39;stock#3&#39;</span>])
+</span></span><span style="display:flex;"><span>my_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>stock#1       GOOLGE
+stock#2    MICROSOFT
+stock#3        APPLE
+dtype: object
+</code></pre>
+<h3 id="task-3-define-a-pandas-series-from-a-dictionary">TASK 3. DEFINE A PANDAS SERIES FROM A DICTIONARY</h3>
+<ul>
+<li>A Dictionary consists of a collection of key-value pairs. Each key-value pair maps the key to its corresponding value.</li>
+<li>Keys are unique within a dictionary while values may not be.</li>
+<li>List elements are accessed by their position in the list, via indexing while Dictionary elements are accessed via keys.</li>
+<li>Define a dictionary named &ldquo;my_dict&rdquo; using key-value pairs.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Employee ID&#39;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;Employee Name&#39;</span>: <span style="color:#e6db74">&#39;Steve&#39;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;Salary [$]&#39;</span>: <span style="color:#ae81ff">2000</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;Years with Company&#39;</span>: <span style="color:#ae81ff">10</span>}
+</span></span></code></pre></div><p>Show the dictionary</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dict
+</span></span></code></pre></div><p>output:</p>
+<pre><code>{'Employee ID': 1,
+ 'Employee Name': 'Steve',
+ 'Salary [$]': 2000,
+ 'Years with Company': 10}
+</code></pre>
+<p>Confirm the dictionary datatype</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(my_dict)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>dict
+</code></pre>
+<p>Let&rsquo;s define a Pandas Series Using the dictionary</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>employee_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(my_dict)
+</span></span><span style="display:flex;"><span>employee_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>Employee ID               1
+Employee Name         Steve
+Salary [$]             2000
+Years with Company       10
+dtype: object
+</code></pre>
+<p><strong>MINI CHALLENGE #3:</strong></p>
+<ul>
+<li><strong>Create a Pandas Series from a dictionary with 3 of your favourite stocks and their corresponding prices</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>stock_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Google&#39;</span>: <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>             <span style="color:#e6db74">&#39;Microsoft&#39;</span>: <span style="color:#ae81ff">120</span>,
+</span></span><span style="display:flex;"><span>             <span style="color:#e6db74">&#39;Apple&#39;</span>: <span style="color:#ae81ff">189</span>}
+</span></span><span style="display:flex;"><span>stock_dict
+</span></span></code></pre></div><p>output:</p>
+<pre><code>{'Google': 100, 'Microsoft': 120, 'Apple': 189}
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_stocks <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(stock_dict)
+</span></span><span style="display:flex;"><span>my_stocks
+</span></span></code></pre></div><p>output:</p>
+<pre><code>Google       100
+Microsoft    120
+Apple        189
+dtype: int64
+</code></pre>
+<h3 id="task-4-pandas-attributes">TASK 4. PANDAS ATTRIBUTES</h3>
+<ul>
+<li>Attributes/Properties: do not use parantheses &ldquo;()&rdquo; and are used to get Pandas Series Properties. Ex: my_series.values, my_series.shape</li>
+<li>Methods: use parantheses &ldquo;()&rdquo; and might include arguments and they actually alter/change the Pandas Series. Ex: my_series.tail(), my_series.head(), my_series.drop_duplicates()</li>
+<li>Indexers: use square brackets &ldquo;[]&rdquo; and are used to access specific elements in a Pandas Series or DataFrame. Ex: my_series.loc[], my_series.iloc[]</li>
+</ul>
+<p>Let&rsquo;s redefine a Pandas Series containing our favorite 5 cryptos</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;BTC&#39;</span>, <span style="color:#e6db74">&#39;XRP&#39;</span>, <span style="color:#e6db74">&#39;LTC&#39;</span>, <span style="color:#e6db74">&#39;ADA&#39;</span>, <span style="color:#e6db74">&#39;ETH&#39;</span>]
+</span></span><span style="display:flex;"><span>crypto_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> crypto_list)
+</span></span><span style="display:flex;"><span>crypto_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0    BTC
+1    XRP
+2    LTC
+3    ADA
+4    ETH
+dtype: object
+</code></pre>
+<ul>
+<li>&ldquo;.Values&rdquo; attribute is used to return Series as ndarray depending on its dtype</li>
+<li>Check this for more information: <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.values.html#pandas.Series.values">https://pandas.pydata.org/docs/reference/api/pandas.Series.values.html#pandas.Series.values</a></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>values
+</span></span></code></pre></div><p>output:</p>
+<pre><code>array(['BTC', 'XRP', 'LTC', 'ADA', 'ETH'], dtype=object)
+</code></pre>
+<p><strong>index</strong> is used to return the index (axis labels) of the Series</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>index
+</span></span></code></pre></div><p>output:</p>
+<pre><code>RangeIndex(start=0, stop=5, step=1)
+</code></pre>
+<p><strong>dtype</strong> is used to return the datatype of the Series (&lsquo;O&rsquo; stands for &lsquo;object&rsquo; datatype)</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>dtype
+</span></span></code></pre></div><p>output:</p>
+<pre><code>dtype('O')
+</code></pre>
+<p>Check if all elements are unique or not</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>is_unique
+</span></span></code></pre></div><p>output:</p>
+<pre><code>True
+</code></pre>
+<ul>
+<li>Check the shape of the Series.</li>
+<li>Note that a Series is one dimensional.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>shape
+</span></span></code></pre></div><p>output:</p>
+<pre><code>(5,)
+</code></pre>
+<p><strong>MINI CHALLENGE #4:</strong></p>
+<ul>
+<li><strong>What is the size of the Pandas Series? (External Research for the proper attribute is Required)</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_series<span style="color:#f92672">.</span>size
+</span></span></code></pre></div><p>output:</p>
+<pre><code>5
+</code></pre>
+<h3 id="task-5-pandas-methods">TASK 5. PANDAS METHODS</h3>
+<ul>
+<li>Methods have parentheses and they actually alter/change the Pandas Series</li>
+<li>Methods: use parantheses &ldquo;()&rdquo; and might include arguments. Ex: my_series.tail(), my_series.head(), my_series.drop_duplicates()</li>
+<li>Let&rsquo;s define another Pandas Series that contains numeric values (crypto prices) instead of text data</li>
+<li>Note that we have int64 datatype which means it contains integer values stored in 64 bits in memory</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> [<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">1500</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">70</span>])
+</span></span><span style="display:flex;"><span>crypto_prices
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0     400
+1     500
+2    1500
+3      20
+4      70
+dtype: int64
+</code></pre>
+<p>Let&rsquo;s obtain the sum of all elements in the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>2490
+</code></pre>
+<p>Let&rsquo;s obtain the multiplication of all elements in the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>product()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>420000000000
+</code></pre>
+<p>Let&rsquo;s obtain the average</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>mean()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>498.0
+</code></pre>
+<p>Let&rsquo;s show the first couple of elements in the Pandas Series</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0     400
+1     500
+2    1500
+dtype: int64
+</code></pre>
+<p>Note that head creates a new dataframe.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>new_crypto_prices <span style="color:#f92672">=</span> crypto_prices<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p><strong>MINI CHALLENGE #5:</strong></p>
+<ul>
+<li><strong>Show the last 2 rows in the Pandas Series (External Research is Required)</strong></li>
+<li><strong>How many bytes does this Pandas Series consume in memory? (External Research is Required)</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>3    20
+4    70
+dtype: int64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>crypto_prices<span style="color:#f92672">.</span>memory_usage()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>168
+</code></pre>
+<h3 id="task-6-import-csv-data-1-d-using-pandas">TASK 6. IMPORT CSV DATA (1-D) USING PANDAS</h3>
+<ul>
+<li>Pandas read_csv is used to read a csv file and store data in a DataFrame by default (DataFrames will be covered shortly!).</li>
+<li>Use Squeeze to convert it into a Pandas Series (One-dimensional).</li>
+<li>Notice that no foramtting exists when a Series is plotted.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>, squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p><strong>MINI CHALLENGE #6:</strong></p>
+<ul>
+<li><strong>Set Squeeze = False and rerun the cell, what do you notice? Use Type to compare both outputs</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series2 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>, squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series2
+</span></span></code></pre></div><p>output:</p>
+<figure><img src="https://a-c-a-f.github.io/Ariel_Portfolio/images/python1p1.jpg"/>
+</figure>
+
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(BTC_price_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.series.Series
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(BTC_price_series2)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.frame.DataFrame
+</code></pre>
+<h3 id="task-7-pandas-built-in-functions">TASK 7. PANDAS BUILT-IN FUNCTIONS</h3>
+<ul>
+<li>Pandas works great with pre-existing python functions.</li>
+<li>You don&rsquo;t have to play with pandas methods and directly leverage Python functions.</li>
+<li>Check Python built-in functions here: <a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a>.</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>,squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Obtain the Data Type of the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>type(BTC_price_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>pandas.core.series.Series
+</code></pre>
+<p>Obtain the length of the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>len(BTC_price_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>2385
+</code></pre>
+<p>Obtain the maximum value of the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>max(BTC_price_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>61243.08594
+</code></pre>
+<p>Obtain the minimum value of the Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>min(BTC_price_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>178.1029968
+</code></pre>
+<p><strong>MINI CHALLENGE #7:</strong></p>
+<ul>
+<li><strong>Given the following Pandas Series, convert all negative values to positive using python built-in functions</strong></li>
+<li><strong>Obtain only unique values (ie: Remove duplicates) using python built-in functions</strong></li>
+<li>my_series = pd.Series(data = [-10, 100, -30, 50, 100])</li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(data <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">100</span>])
+</span></span><span style="display:flex;"><span>my_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0    -10
+1    100
+2    -30
+3     50
+4    100
+dtype: int64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#my_series.abs(-)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>abs(my_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0     10
+1    100
+2     30
+3     50
+4    100
+dtype: int64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>set(my_series)
+</span></span></code></pre></div><p>output:</p>
+<pre><code>{-30, -10, 50, 100}
+</code></pre>
+<h3 id="task-8-sorting-pandas-series">TASK 8. SORTING PANDAS SERIES</h3>
+<p>Let&rsquo;s import CSV data as follows:</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>, squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>You can sort the values in the dataframe as follows.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>sort_values()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>119       178.102997
+122       199.259995
+121       208.097000
+120       209.843994
+123       210.339004
+            ...     
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+2366    59302.316410
+2365    61243.085940
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Let&rsquo;s view Pandas Series again after sorting, Note that nothing changed in memory! you have to make sure that <strong>inplace</strong> is set to True.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Set inplace = True to ensure that change has taken place in memory.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>sort_values(inplace <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Note that now the change (ordering) took place</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>119       178.102997
+122       199.259995
+121       208.097000
+120       209.843994
+123       210.339004
+            ...     
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+2366    59302.316410
+2365    61243.085940
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Notice that the indexes are now changed.</p>
+<p>You can also sort by index (revert back to the original Pandas Series) as follows:</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>sort_index(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p><strong>MINI CHALLENGE #8:</strong></p>
+<ul>
+<li><strong>Sort the BTC_price_series values in a decending order instead. Make sure to update values in-memory.</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>2365    61243.085940
+2366    59302.316410
+2384    59095.808590
+2383    58918.832030
+2382    58917.691410
+            ...     
+123       210.339004
+120       209.843994
+121       208.097000
+122       199.259995
+119       178.102997
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<h3 id="task-9-perform-math-operations-on-pandas-series">TASK 9. PERFORM MATH OPERATIONS ON PANDAS SERIES</h3>
+<p>Let&rsquo;s import CSV data as follows:</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>, squeeze <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Apply Sum Method on Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>15435379.738852698
+</code></pre>
+<p>Apply count Method on Pandas Series.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>count()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>2385
+</code></pre>
+<p>Obtain the maximum value.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>max()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>61243.08594
+</code></pre>
+<p>Obtain the minimum value.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>min()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>178.1029968
+</code></pre>
+<p><strong>Describe</strong> is used to obtain all statistical information in one place.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>describe()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>count     2385.000000
+mean      6471.857333
+std       9289.022505
+min        178.102997
+25%        454.618988
+50%       4076.632568
+75%       8864.766602
+max      61243.085940
+Name: BTC-USD Price, dtype: float64
+</code></pre>
+<p><strong>MINI CHALLENGE #9:</strong></p>
+<ul>
+<li><strong>Obtain the average price of the BTC_price_series using two different methods</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series<span style="color:#f92672">.</span>mean()
+</span></span></code></pre></div><p>output:</p>
+<pre><code>6471.857332852284
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>average <span style="color:#f92672">=</span> BTC_price_series<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> BTC_price_series<span style="color:#f92672">.</span>count()
+</span></span><span style="display:flex;"><span>average
+</span></span></code></pre></div><p>output:</p>
+<pre><code>6471.857332852284
+</code></pre>
+<h3 id="task-10-check-if-a-given-element-exists-in-a-pandas-series">TASK 10. CHECK IF A GIVEN ELEMENT EXISTS IN A PANDAS SERIES</h3>
+<p>Let&rsquo;s import CSV data as follows:</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;crypto.csv&#39;</span>, squeeze<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>Check if a given number exists in a Pandas Series values.
+Returns a boolean &ldquo;True&rdquo; or &ldquo;False&rdquo;.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">1295.5</span> <span style="color:#f92672">in</span> BTC_price_series<span style="color:#f92672">.</span>values
+</span></span></code></pre></div><p>output:</p>
+<pre><code>False
+</code></pre>
+<p>Check if a given number exists in a Pandas Series index.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">1295</span> <span style="color:#f92672">in</span> BTC_price_series<span style="color:#f92672">.</span>index
+</span></span></code></pre></div><p>output:</p>
+<pre><code>True
+</code></pre>
+<p>Note that by default &lsquo;in&rsquo; will search in Pandas index and not values.</p>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">1295</span> <span style="color:#f92672">in</span> BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>True
+</code></pre>
+<p><strong>MINI CHALLENGE #10:</strong></p>
+<ul>
+<li><strong>Check if the stock price 399 exists in the BTC_price_series Pandas Series or not</strong></li>
+<li><strong>Round stock prices to the nearest integer and check again</strong></li>
+</ul>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">399</span> <span style="color:#f92672">in</span> BTC_price_series<span style="color:#f92672">.</span>values
+</span></span></code></pre></div><p>output:</p>
+<pre><code>False
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BTC_price_series
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.334015
+1         424.440002
+2         394.795990
+3         408.903992
+4         398.821014
+            ...     
+2380    55950.746090
+2381    57750.199220
+2382    58917.691410
+2383    58918.832030
+2384    59095.808590
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rounded <span style="color:#f92672">=</span> BTC_price_series<span style="color:#f92672">.</span>round()
+</span></span><span style="display:flex;"><span>rounded
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.0
+1         424.0
+2         395.0
+3         409.0
+4         399.0
+         ...   
+2380    55951.0
+2381    57750.0
+2382    58918.0
+2383    58919.0
+2384    59096.0
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">399</span> <span style="color:#f92672">in</span> rounded
+</span></span></code></pre></div><p>output:</p>
+<pre><code>True
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>price_rounded <span style="color:#f92672">=</span> round(BTC_price_series)
+</span></span><span style="display:flex;"><span>price_rounded
+</span></span></code></pre></div><p>output:</p>
+<pre><code>0         457.0
+1         424.0
+2         395.0
+3         409.0
+4         399.0
+         ...   
+2380    55951.0
+2381    57750.0
+2382    58918.0
+2383    58919.0
+2384    59096.0
+Name: BTC-USD Price, Length: 2385, dtype: float64
+</code></pre>
+<p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">399</span> <span style="color:#f92672">in</span> price_rounded
+</span></span></code></pre></div><p>output:</p>
+<pre><code>True
+</code></pre>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-dark-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://a-c-a-f.github.io/Ariel_Portfolio/" >
+    &copy;  Home 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/ariel-christian-felices/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://twitter.com/ariel_felices" target="_blank" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/A-C-A-F" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.kaggle.com/arielfelices" target="_blank" class="kaggle ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="kaggle link" rel="noopener" aria-label="follow on kaggle——Opens in a new window">
+      
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/></svg></span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
